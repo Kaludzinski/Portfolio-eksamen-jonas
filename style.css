@@ -84,6 +84,9 @@
 
 /* Styling af forside content */
 
+section {
+    padding: 100px 0;
+}
 .forside {
     display: flex;
     background: url(/images/Billedeommig.jpg) no-repeat center;
@@ -130,43 +133,15 @@
 }
 
 /* Om mig stylingen */
-section {
-    padding: 100px 0;
-}
-.om-mig {
+
+.om-mig, .service {
     font-family: 'roboto mono', sans-serif;
-}
-.om-mig .tittle {
-    position: relative;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 60px;
-    padding-bottom: 20px;
-    font-family: 'roboto mono', sans-serif;
-}
-.om-mig .tittle::before {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    width: 180px;
-    height: 3px;
-    background: var(--brand-primary);
-    transform: translateX(-50%);
 }
 .om-mig .tittle::after {
     content: "Hvem er jeg";
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    font-size: 20px;
-    color: var(--brand-quartenary);
-    padding: 5px;
-    background: var(--typo-text);
-    transform: translateX(-50%);
 }
-.om-mig .om-mig-content  {
+.om-mig .om-mig-content,
+.service .service-content  {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -213,9 +188,81 @@ section {
 
 }
 
+/* Ensformet kodning */
 
+section .tittle {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'roboto mono', sans-serif;
+}
+section .tittle::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: var(--brand-primary);
+    transform: translateX(-50%);
+}
+section .tittle::after {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    color: var(--brand-quartenary);
+    padding: 5px;
+    background: var(--typo-text);
+    transform: translateX(-50%);
+}
 
+/* Styling af Service sektion */
 
+.service {
+    color: var(--typo-text);
+    background: var(--brand-primary);
+}
+.service .tittle::before {
+    background: var(--typo-text);
+}
+.service .tittle::after {
+    background: var(--brand-primary);
+    content: "Hvad jeg kan";
+}
+.service .service-content .card {
+    width: calc(33% - 20px);
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.service .service-content .card:hover {
+    background: var(--brand-quartenary);
+}
+.service .service-content .card .box {
+    transition: all 0.3s ease;
+}
+.service .service-content .card:hover .box {
+    transform: scale(1.05);
+}
+.service .service-content .card i {
+    font-size: 50px;
+    color: var(--brand-quartenary);
+    transition: color 0.3s ease;
+}
+.service .service-content .card:hover i {
+    color: var(--typo-text);
+}
+.service .service-content .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+} 
 
 
 
@@ -296,6 +343,10 @@ section {
     .om-mig .om-mig-content .right {
         flex: 100%;
     }
+    .service .service-content .card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 690px) {
@@ -310,6 +361,9 @@ section {
     }
     .forside .forside-content a {
         font-size: 20px;
+    }
+    .service .service-content .card {
+        width: 100%;
     }
 }
 
