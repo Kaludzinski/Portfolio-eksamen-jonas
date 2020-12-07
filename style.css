@@ -183,7 +183,7 @@ section {
 section {
     padding: 100px 0;
 }
-.om-mig, .service, .skills {
+.om-mig, .service, .skills .projekter {
     font-family: 'roboto mono', sans-serif;
 }
 .om-mig .om-mig-content,
@@ -226,14 +226,16 @@ section .tittle::after {
 
 /* Styling af Service sektion */
 
-.service {
+.service, .projekter {
     color: var(--typo-text);
     background: var(--brand-primary);
 }
-.service .tittle::before {
+.service .tittle::before,
+.projekter .tittle::before {
     background: var(--typo-text);
 }
-.service .tittle::after {
+.service .tittle::after,
+.projekter .tittle::after {
     background: var(--brand-primary);
     content: "Hvad jeg kan";
 }
@@ -339,6 +341,71 @@ section .tittle::after {
 }
 .skills-content .right .adobe::before {
     width: 80%;
+}
+
+
+/* Kodning af projekter */ 
+
+.projekter .tittle::after {
+    content: "Portfolio";
+}
+.projekter .carousel .card {
+    background: var(--success-color);
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.projekter .carousel .card:hover {
+    background: var(--brand-quartenary)
+}
+.projekter .carousel .card .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.projekter .carousel .card:hover .box {
+    transform: scale(1.05);
+}
+.projekter .carousel .card  .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+
+}
+.projekter .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--brand-quartenary);
+    transition: all 0.3s ease;
+}
+.projekter .carousel .card:hover img {
+    border-color: var(--typo-text);
+}
+.owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot {
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid var(--brand-quartenary)!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active {
+    width: 35px;
+    border-radius: 14px;
+}
+.own-dot.active,
+.own-dot:hover {
+    background: var(--brand-quartenary)!important;
 }
 
 /* Responvsiv kodning */ 
