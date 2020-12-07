@@ -134,18 +134,8 @@ section {
 
 /* Om mig stylingen */
 
-.om-mig, .service {
-    font-family: 'roboto mono', sans-serif;
-}
 .om-mig .tittle::after {
     content: "Hvem er jeg";
-}
-.om-mig .om-mig-content,
-.service .service-content  {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
 }
 .om-mig .om-mig-content .left {
     width: 45%;
@@ -190,6 +180,20 @@ section {
 
 /* Ensformet kodning */
 
+section {
+    padding: 100px 0;
+}
+.om-mig, .service, .skills {
+    font-family: 'roboto mono', sans-serif;
+}
+.om-mig .om-mig-content,
+.service .service-content,
+.skills .skills-content  {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
 section .tittle {
     position: relative;
     text-align: center;
@@ -265,8 +269,77 @@ section .tittle::after {
 } 
 
 
+/* Styling af Skills sektion */
 
-
+.skills .tittle::after {
+    content: "Hvad jeg kan";
+}
+.skills .skills-content .column {
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills .skills-content .left p {
+    text-align: justify;
+}
+.skills .skills-content .left a {
+    display: inline-block;
+    background: var(--brand-quartenary);
+    color: var(--typo-text);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--brand-quartenary);
+    transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover {
+    color: var(--brand-quartenary);
+    background: none;
+}
+.skills .skills-content .right .bars {
+    margin-bottom: 15px;
+}
+.skills .skills-content .right .info {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .right span {
+    font-weight: 500;
+    font-size: 18px;
+}
+.skills .skills-content .right .line {
+    height: 5px;
+    width: 100%;
+    background: var(--success-color);
+    position: relative;
+}
+.skills .skills-content .right .line::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: blue;
+}
+.skills-content .right .html::before {
+    width: 70%;
+}
+.skills-content .right .css::before {
+    width: 50%;
+}
+.skills-content .right .js::before {
+    width: 30%;
+}
+.skills-content .right .adobe::before {
+    width: 80%;
+}
 
 /* Responvsiv kodning */ 
 
@@ -346,6 +419,10 @@ section .tittle::after {
     .service .service-content .card {
         width: calc(50% - 10px);
         margin-bottom: 20px;
+    }
+    .skills .skills-content .column {
+        width: 100%;
+        margin-bottom: 35px;
     }
 }
 
