@@ -15,7 +15,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 .max-width {
     max-width: 1300px;
     padding: 0 80px;
@@ -81,6 +83,29 @@
     cursor: pointer;
     display: none;
 }
+.scroll-up-btn {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: var(--brand-quartenary);
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    background: var(--brand-primary);
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
 
 /* Styling af forside content */
 
@@ -135,6 +160,7 @@ section {
 /* Om mig stylingen */
 
 .om-mig .tittle::after {
+    background: var(--brand-primary);
     content: "Hvem er jeg";
 }
 .om-mig .om-mig-content .left {
@@ -183,7 +209,7 @@ section {
 section {
     padding: 100px 0;
 }
-.om-mig, .service, .skills .projekter {
+.om-mig, .service, .skills .projekter, footer {
     font-family: 'roboto mono', sans-serif;
 }
 .om-mig .om-mig-content,
@@ -274,7 +300,8 @@ section .tittle::after {
 /* Styling af Skills sektion */
 
 .skills .tittle::after {
-    content: "Hvad jeg kan";
+    background: var(--brand-primary);
+    content: "Programmer";
 }
 .skills .skills-content .column {
     width: calc(50% - 30px);
@@ -406,6 +433,22 @@ section .tittle::after {
 .own-dot.active,
 .own-dot:hover {
     background: var(--brand-quartenary)!important;
+}
+
+/* Styling af Footer */
+
+footer {
+    background: var(--brand-primary);
+    padding: 20px 23px;
+    color: var(--typo-text);
+    text-align: center;
+}
+footer span a {
+    color: var(--brand-quartenary);
+    text-decoration: none;
+}
+footer span a:hover {
+    text-decoration: underline;
 }
 
 /* Responvsiv kodning */ 
